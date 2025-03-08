@@ -1,0 +1,16 @@
+// document
+//   .getElementById("product-container")
+//   .addEventListener("click", function (e) {
+//     if (e.target.tagName == "BUTTON") {
+//       const button = e.target;
+//       // console.log(
+//       //   button.parentNode.parentNode.children[1].children[1].innerText
+//       // );
+//     }
+//   });
+// console.log("are you ok?");
+document
+  .getElementById("product-container")
+  .addEventListener("click", function (event) {
+    console.log(event.target.tag);
+  });
