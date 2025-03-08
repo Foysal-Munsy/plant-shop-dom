@@ -168,6 +168,20 @@ const products = [
     id: 23,
   },
 ];
+let countNumberOfCart = 0,
+  totalPrice = 0;
+
+function addToCart(regularPrice) {
+  // console.log(price);
+  countNumberOfCart++;
+  // console.log(countNumberOfCart);
+  totalPrice += regularPrice;
+  // console.log(totalPrice);
+  document.getElementById("cart-total").innerText = countNumberOfCart;
+  document.getElementById("price-total").innerText = totalPrice;
+  document.getElementById("cart-count").innerText = countNumberOfCart;
+}
+// const addCart = addToCart(product.price);
 
 function displayProducts() {
   for (const product of products) {
@@ -189,7 +203,7 @@ function displayProducts() {
         </div>
         <div class="card-actions">
           <button
-            onclick="add2Cart(${product.price})"
+            onclick="addToCart(${product.price})"
             class="btn btn-success text-white"
           >
             Add to Cart
