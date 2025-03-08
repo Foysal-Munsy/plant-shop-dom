@@ -173,49 +173,33 @@ function displayProducts() {
   for (const product of products) {
     const card = document.createElement("div");
     card.innerHTML = `
-    <div class="card bg-base-100 shadow-sm product-card">
-          <figure class="px-10 pt-10">
-            <img
-              src="${product.img_url}"
-              alt="Shoes"
-              class="rounded-xl"
-            />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">${product.name}</h2>
-            <div class="flex justify-center gap-3">
-              <p class="text-lg opacity-30 line-through">$200</p>
-              <p class="text-xl">$ ${product.price}</p>
-            </div>
-            <div class="card-actions">
-              <button onclick="add2Cart( ${product.price})" class="btn btn-success text-white">Add to Cart</button>
-            </div>
-          </div>
+    <div class="card bg-base-100 shadow-sm product-card h-80">
+      <figure class="px-10 pt-10">
+        <img
+          src="${product.img_url}"
+          alt="${product.name}"
+          class="rounded-xl w-40 h-40 object-cover"
+        />
+      </figure>
+      <div class="card-body items-center text-center h-44">
+        <h2 class="card-title text-lg h-12 overflow-hidden">${product.name}</h2>
+        <div class="flex justify-center gap-3">
+          <p class="text-lg opacity-30 line-through">$200</p>
+          <p class="text-xl">$ ${product.price}</p>
         </div>
+        <div class="card-actions">
+          <button
+            onclick="add2Cart(${product.price})"
+            class="btn btn-success text-white"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
     `;
     document.getElementById("product-container").append(card);
   }
 }
 
 displayProducts();
-{
-  /* <div class="card bg-base-100 shadow-sm product-card">
-          <figure class="px-10 pt-10">
-            <img
-              src="${product.img_url}"
-              alt="Shoes"
-              class="rounded-xl"
-            />
-          </figure>
-          <div class="card-body items-center text-center">
-            <h2 class="card-title">${product.name}</h2>
-            <div class="flex justify-center gap-3">
-              <p class="text-lg opacity-30 line-through">$200</p>
-              <p class="text-xl">$ ${product.price}</p>
-            </div>
-            <div class="card-actions">
-              <button onclick="add2Cart( ${product.price})" class="btn btn-success text-white">Add to Cart</button>
-            </div>
-          </div>
-        </div> */
-}
